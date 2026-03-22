@@ -1,0 +1,16 @@
+{
+  "appName": "RS3 Arch Material Counter",
+  "description": "Track archaeology materials found via chatbox reading. Includes auto-screener, familiar, porter, Fortune perk and Balarak support with artefact calculator.",
+  "appUrl": "./index.html",
+  "configUrl": "./appconfig.json",
+  "iconUrl": "./icon.png",
+  "defaultWidth": 380,
+  "defaultHeight": 650,
+  "minWidth": 310,
+  "minHeight": 400,
+  "maxWidth": 500,
+  "maxHeight": 1000,
+  "requestHandlers": [],
+  "activators": [],
+  "permissions": "pixel,overlay"
+}
