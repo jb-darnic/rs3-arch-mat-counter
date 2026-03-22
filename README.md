@@ -41,7 +41,16 @@ Requires [Alt1 Toolkit](https://runeapps.org/alt1) with **pixel** and **overlay*
 
 ## Screenshots
 
-*Coming soon*
+<p align="center">
+  <img src="screenshots/main-view.png" alt="Material Tracking" width="280">
+  &nbsp;&nbsp;
+  <img src="screenshots/settings.png" alt="Settings Panel" width="280">
+</p>
+<p align="center">
+  <img src="screenshots/artefact-calc.png" alt="Artefact Calculator" width="280">
+  &nbsp;&nbsp;
+  <img src="screenshots/session-history.png" alt="Session History" width="280">
+</p>
 
 ## Credits
 
