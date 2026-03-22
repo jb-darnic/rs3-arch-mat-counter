@@ -1,63 +1,53 @@
 # RS3 Archaeology Material Counter
 
-An [Alt1 Toolkit](https://runeapps.org/alt1) plugin for tracking archaeology materials in RuneScape 3 via chatbox reading.
-
-## Features
-
-- **ChatBox Reading** — Automatically detects materials from chat messages (normal finds, auto-screener, familiar, porter/imp-souled, bank)
-- **Fortune Perk & Balarak** — Correctly handles 2x and 4x multipliers
-- **Artefact Calculator** — Plan restorations with material requirements and XP totals (data fetched from RS Wiki)
-- **Live Rate Tracker** — Mats/hr with sparkline graph and elapsed time
-- **Progress Bars** — Visual goal progress behind each material row
-- **Alt1 Overlay Notifications** — Goal completion alerts on the game screen
-- **Dig Site Auto-Detect** — Filters materials based on detected dig site from chat
-- **Time-to-Goal Estimates** — ETA for each material goal based on current rates
-- **Compact Mode** — Minimal UI for smaller windows
-- **Session History** — Logs past sessions with breakdowns and rates
-- **Sound Alerts** — Audio chime on material find and goal completion
-- **Material Pinning** — Pin favorite materials to the top of the list
-- **Collection Log** — Track progress across artefact collections
-- **CSV Export** — Export material data to spreadsheet
-- **Search & Filter** — Find materials quickly with Ctrl+F or filter by quantity/goals
+An [Alt1 Toolkit](https://runeapps.org/alt1) plugin for tracking archaeology materials in RuneScape 3. Reads your chatbox in real time to automatically count materials as you excavate.
 
 ## Install
 
-### From GitHub Pages
-
-Click the link below inside Alt1's built-in browser, or paste it into Alt1's URL bar:
+Paste the following URL into Alt1's browser or URL bar:
 
 ```
-alt1://addapp/https://YOUR_USERNAME.github.io/rs3-arch-mat-counter/appconfig.json
+alt1://addapp/https://jb-darnic.github.io/rs3-arch-mat-counter/appconfig.json
 ```
 
-Replace `YOUR_USERNAME` with your GitHub username.
+Requires [Alt1 Toolkit](https://runeapps.org/alt1) with **pixel** and **overlay** permissions.
 
-### Local Testing
+## Features
 
-```bash
-python -m http.server 8080 --bind 127.0.0.1
-```
+**Core Tracking**
+- Automatic material detection via ChatBox reading — supports normal finds, auto-screener, familiar, porter, imp-souled, and bank messages
+- Fortune perk (2x) and Balarak (2x) multiplier handling, including the 4x combo
+- Artefact calculator with material requirements and restoration XP totals
+- Material data and artefact data pulled live from the [RS3 Wiki](https://runescape.wiki) and cached locally
 
-Then add to Alt1:
+**Goals & Progress**
+- Set material goals from the artefact calculator or manually
+- Progress bars behind each material row showing goal completion
+- Time-to-goal estimates based on your current session rate
+- Alt1 overlay notifications when a goal is reached
 
-```
-alt1://addapp/http://localhost:8080/appconfig.json
-```
+**Quality of Life**
+- Live rate tracker (mats/hr) with sparkline graph
+- Dig site auto-detection from chat — filters the material list to your current site
+- Material pinning to keep important materials at the top
+- Compact mode for smaller windows
+- Search and filter (Ctrl+F, filter by quantity or goals)
+- CSV export
 
-## Files
+**Session & History**
+- Session history panel logging past sessions with per-material breakdowns
+- Sound alerts on material finds and goal completions (configurable volume)
+- Collection log tracking progress across artefact collections
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Complete self-contained plugin (HTML + CSS + JS) |
-| `appconfig.json` | Alt1 app manifest |
-| `icon.png` | App icon |
+## Screenshots
 
-## Tech
+*Coming soon*
 
-- Single-file HTML — no build step, no dependencies beyond Alt1's CDN scripts
-- Material and artefact data fetched live from the [RS3 Wiki API](https://runescape.wiki/api.php) with localStorage caching
-- Web Audio API for sound alerts
-- Alt1 overlay API for in-game notifications
+## Credits
+
+- Material and artefact data sourced from the [RuneScape Wiki](https://runescape.wiki)
+- Built for use with [Alt1 Toolkit](https://runeapps.org/alt1) by [Skillbert](https://runeapps.org)
+- Inspired by [zerogwafa's ArchMatCounter](https://github.com/zerogwafa/ArchMatCounter)
 
 ## License
 
