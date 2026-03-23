@@ -154,6 +154,7 @@
   body.compact .header h1 { font-size: 13px; letter-spacing: 1px; gap: 4px; }
   body.compact .header .arch-icon { width: 16px; height: 16px; }
   body.compact .header-controls { display: none; }
+  body.compact .compact-exit { display: inline-block; }
   body.compact .header::after { display: none; }
   body.compact .status-bar { padding: 3px 8px; margin: 3px 0; }
   body.compact .rate-bar { display: none; }
@@ -165,6 +166,27 @@
   body.compact .tab-footer { padding: 3px 6px; }
   body.compact .tab-footer .rs-btn { padding: 3px 6px; font-size: 9px; }
   body.compact .dig-site-bar { display: none; }
+
+  /* ═══ Compact Exit Button ═══ */
+  .compact-exit {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    color: var(--text-dim);
+    padding: 2px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 10;
+    transition: all 0.2s;
+  }
+  .compact-exit:hover { border-color: var(--copper); color: var(--copper-bright); }
 
   /* ═══ Buttons (RS-styled) ═══ */
   .rs-btn {
@@ -1043,6 +1065,7 @@
         <img class="arch-icon" src="https://runescape.wiki/images/Archaeology.png?cache=1" alt="" onerror="this.style.display='none'">
         Arch Materials
       </h1>
+      <button class="compact-exit" id="compactExit" title="Exit compact mode">Expand</button>
       <div class="header-controls">
         <button class="rs-btn" id="searchToggle" title="Ctrl+F">Search</button>
         <button class="rs-btn" id="settingsBtn">Settings</button>
@@ -2298,6 +2321,14 @@
       compactMode = e.target.checked;
       localStorage.archCompact = compactMode;
       document.body.classList.toggle('compact', compactMode);
+    });
+
+    // Compact exit button (visible only in compact mode)
+    $('#compactExit').addEventListener('click', () => {
+      compactMode = false;
+      localStorage.archCompact = false;
+      document.body.classList.remove('compact');
+      $('#compactCheck').checked = false;
     });
 
     // Feature #8: Sound settings
